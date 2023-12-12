@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Bar } from "react-chartjs-2";
 import './Callback.css';
 

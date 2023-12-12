@@ -16,6 +16,10 @@ const generateRandomData = (numItems: any) => (
     Array.from({ length: numItems }, () => Math.round(Math.random() * 1500))
 );
 
+// const generateDataForPeriod = (days: number): number[] => {
+//     return Array.from({ length: days }, () => Math.round(Math.random() * 1500));
+// };
+
 const generateDataForCustomPeriod = (startDate: any, endDate: any) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -46,7 +50,7 @@ const barOptions: any = {
     plugins: {
         legend: {
             display: false,
-            position: 'bottom' as const // Ensure this is a specific string literal
+            position: 'bottom' as any
         }
     }
 };
@@ -163,13 +167,13 @@ const Statistics = () => {
                         <><div className="date-picker-container">
                             <ReactDatePicker
                                 selected={startDate}
-                                onChange={(date) => setStartDate(date)}
+                                onChange={(date: Date) => setStartDate(date || new Date())}
                                 selectsStart
                                 startDate={startDate}
                                 endDate={endDate} />
                             <ReactDatePicker
                                 selected={endDate}
-                                onChange={(date) => setEndDate(date)}
+                                onChange={(date: Date) => setEndDate(date || new Date())}
                                 selectsEnd
                                 startDate={startDate}
                                 endDate={endDate}
