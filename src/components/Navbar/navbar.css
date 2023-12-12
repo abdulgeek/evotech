@@ -102,6 +102,10 @@
         height: auto;
         padding: 10px 5px;
     }
+    .profile {
+        margin: 20px 0 ;
+    }
+
 
     .navbar-left,
     .navbar-right,
@@ -211,6 +215,6 @@
     }
 
     .navbar-right {
-        margin-left: -10%;
+        margin-left: -15%;
     }
 }
