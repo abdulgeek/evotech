@@ -172,8 +172,9 @@ const Statistics = () => {
                                 startDate={startDate}
                                 endDate={endDate}
                                 minDate={startDate} />
+                        </div>
                             <button className="reset-button" onClick={handleCustomDateFilter}>Filter Data</button>
-                        </div><button className="reset-button" onClick={resetDateRange}>Reset</button></>
+                            <button className="reset-button" onClick={resetDateRange}>Reset</button></>
                     )}
                     <Bar options={barOptions} data={chartData} />
                 </div>
