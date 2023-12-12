@@ -127,6 +127,14 @@
         padding: 10px 0; 
     }
 
+    .agent-status-container {
+        flex-direction: column;
+    }
+
+    .pie-chart {
+        margin-left: 50px;
+    }
+
     .pie-chart canvas {
         width: 100%; 
         max-width: 300px; 

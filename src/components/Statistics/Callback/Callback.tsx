@@ -51,6 +51,8 @@ const Callback = () => {
     return (
         <div className="call-distribution-layout">
             <div className="call-distribution-container">
+                <h3 className='header'>Call Distribution</h3>
+                <hr style={{ margin: '10px 0', fill: 'rgba(0, 0, 0, 0.25)' }} />
                 <Bar data={callDistributionData} options={barOptions} />
             </div>
             <CustomLegend />
