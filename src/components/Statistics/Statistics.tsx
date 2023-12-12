@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar"
 import DashboardNavbar from "./DashboardNavbar/DashboardNavbar";
@@ -32,20 +33,30 @@ const generateDataForCustomPeriod = (startDate: any, endDate: any) => {
 
 const yearlyData = generateRandomData(12);
 
-const options = {
+const barOptions: any = {
     responsive: true,
-    plugins: {
-        legend: { position: 'top' },
-        title: { display: true, text: 'Call Statistics' },
+    scales: {
+        x: {
+            stacked: false
+        },
+        y: {
+            stacked: false
+        }
     },
+    plugins: {
+        legend: {
+            display: false,
+            position: 'bottom' as const // Ensure this is a specific string literal
+        }
+    }
 };
 
 const Statistics = () => {
     const [activeButton, setActiveButton] = useState('');
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const [startDate, setStartDate] = useState<any>(new Date());
+    const [endDate, setEndDate] = useState<any>(new Date());
     const [showCustomDatePickers, setShowCustomDatePickers] = useState(false);
-    const [chartData, setChartData] = useState({
+    const [chartData, setChartData] = useState<any>({
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
             label: 'Number of Calls',
@@ -166,7 +177,7 @@ const Statistics = () => {
                             <button className="reset-button" onClick={handleCustomDateFilter}>Filter Data</button>
                         </div><button className="reset-button" onClick={resetDateRange}>Reset</button></>
                     )}
-                    <Bar options={options} data={chartData} />
+                    <Bar options={barOptions} data={chartData} />
                 </div>
                 <CallStats />
                 <Callback />
