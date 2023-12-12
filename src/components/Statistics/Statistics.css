@@ -5,7 +5,8 @@
 }
 
 .sidebar {
-    width: 13.3%;
+    flex: 0 0 auto; 
+    max-width: 300px; 
 }
 
 .main-content {

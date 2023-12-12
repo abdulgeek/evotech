@@ -46,7 +46,7 @@ const barOptions: any = {
     plugins: {
         legend: {
             display: false,
-            position: 'bottom' as any
+            position: 'bottom' as const
         }
     }
 };
