@@ -24,6 +24,7 @@ const Navbar = () => {
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+    
     return (
         <nav className="navbar">
             <div className="navbar-left">

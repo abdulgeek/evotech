@@ -113,9 +113,40 @@
     }
 
     .search-container {
-        flex-direction: row;
-        padding: 5px;
-        margin: 5px 0 5px 0;
+        flex-wrap: wrap; /* Allow elements to wrap */
+        justify-content: space-around; /* Evenly space out elements */
+        padding: 10px;
+    }
+
+    .search-icon, .category-icon {
+        flex-basis: 10%; /* Adjust the width */
+        text-align: center;
+    }
+
+    .search-input {
+        flex-basis: 60%; /* Adjust the width */
+        margin: 0 5px; /* Adjust margin */
+    }
+
+    .category-label {
+        flex-basis: 20%; /* Adjust the width */
+        text-align: center;
+    }
+
+    .search-btn {
+        flex-basis: 100%; /* Button takes full width */
+        margin: 10px 0 0; /* Adjust margin */
+        width: auto; /* Override previous width settings */
+    }
+
+    /* Adjust icon sizes for better visibility */
+    .search-icon, .category-icon, .icon {
+        font-size: 20px;
+    }
+
+    /* Adjust text sizes for better visibility */
+    .search-input, .search-btn, .category-label {
+        font-size: 14px;
     }
 
     .search-input,
