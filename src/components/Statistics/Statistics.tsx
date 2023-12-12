@@ -16,10 +16,6 @@ const generateRandomData = (numItems: any) => (
     Array.from({ length: numItems }, () => Math.round(Math.random() * 1500))
 );
 
-// const generateDataForPeriod = (days: number): number[] => {
-//     return Array.from({ length: days }, () => Math.round(Math.random() * 1500));
-// };
-
 const generateDataForCustomPeriod = (startDate: any, endDate: any) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
@@ -78,12 +74,10 @@ const Statistics = () => {
         });
     };
 
-    const generateDataForPeriod = (days: any) => {
-        return Array.from({ length: days }, (_, i) => ({
-            x: i + 1,
-            y: Math.round(Math.random() * 1500)
-        }));
+    const generateDataForPeriod = (days: number): number[] => {
+        return Array.from({ length: days }, () => Math.round(Math.random() * 1500));
     };
+
 
     const handleButtonClick = (button: any) => {
         setActiveButton(button);
@@ -167,13 +161,13 @@ const Statistics = () => {
                         <><div className="date-picker-container">
                             <ReactDatePicker
                                 selected={startDate}
-                                onChange={(date: Date) => setStartDate(date || new Date())}
+                                onChange={(date: Date | null) => setStartDate(date || new Date())}
                                 selectsStart
                                 startDate={startDate}
                                 endDate={endDate} />
                             <ReactDatePicker
                                 selected={endDate}
-                                onChange={(date: Date) => setEndDate(date || new Date())}
+                                onChange={(date: Date | null) => setEndDate(date || new Date())}
                                 selectsEnd
                                 startDate={startDate}
                                 endDate={endDate}
