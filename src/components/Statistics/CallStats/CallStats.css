@@ -67,7 +67,7 @@
 
 
 .pie-chart canvas {
-    width: 40%;
+    width: 80%;
 }
 
 .agent-status-container {
@@ -77,7 +77,7 @@
 }
 
 .pie-chart {
-    flex-basis: 40%; 
+    flex-basis: 80%; 
     padding-right: 20px; 
 }
 
